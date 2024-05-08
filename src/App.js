@@ -3,7 +3,7 @@ import { useState } from 'react';
 import ExpenseList from './Components/ExpenseList';
 import NavBar from './Components/NavBar';
 import ExpenseFilter from './Components/ExpenseFilter';
-
+import AddExpense from './Components/AddExpense'; 
 function App() {
 
   const [expenses, setExpenses] = useState([
@@ -22,12 +22,19 @@ function App() {
   const filterItem = (categ) => {
     setExpenses(expenses.filter(expense => expense.category === categ))
   }
+  const addExpense = (newExpense) => {
+    const newId = expenses.length + 1; // Assuming `id` should be auto-incremented
+    const expenseWithId = { ...newExpense, id: newId };
+    setExpenses([...expenses, expenseWithId]);
+};
 
   return (
     <div className="App">
       <NavBar/>
+      <AddExpense onAddExpense={addExpense}/>
       <ExpenseFilter filterItem = {filterItem}/>
       <ExpenseList items = {expenses} deleteItem = {deleteItem}/>
+      
     </div>
   );
 }
