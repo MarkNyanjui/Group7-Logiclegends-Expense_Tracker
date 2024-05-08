@@ -1,23 +1,33 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
+import ExpenseList from './Components/ExpenseList';
+import NavBar from './Components/NavBar';
+import ExpenseFilter from './Components/ExpenseFilter';
 
 function App() {
+
+  const [expenses, setExpenses] = useState([
+    {id:1, description:"Groceries", amount:"200", category:"Food"},
+    {id:2, description:"Rent", amount:"2000", category:"Utilities"},
+    {id:3, description:"Electricity", amount:"1000", category:"Utilities"},
+    {id:4, description:"Dstv", amount:"500", category:"Entertainment"},
+    {id:5, description:"Clothes", amount:"2000", category:"Clothing"},
+  ]);
+
+  const deleteItem = (id) => {
+    setExpenses (expenses.filter(expense => expense.id !== id))
+  }
+
+  
+  const filterItem = (categ) => {
+    setExpenses(expenses.filter(expense => expense.category === categ))
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <NavBar/>
+      <ExpenseFilter filterItem = {filterItem}/>
+      <ExpenseList items = {expenses} deleteItem = {deleteItem}/>
     </div>
   );
 }
