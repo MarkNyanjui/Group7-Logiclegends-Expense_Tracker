@@ -29,7 +29,8 @@ const AddExpense = ({ onAddExpense }) => {
                     onChange={(e) => setDescription(e.target.value)}
                 />
             </div>
-            <div className="form-group mb-4">
+
+            <div className="form-group">
                 <label>Amount ($)</label>
                 <input
                     type="number"
@@ -58,3 +59,4 @@ const AddExpense = ({ onAddExpense }) => {
 };
 
 export default AddExpense;
+
