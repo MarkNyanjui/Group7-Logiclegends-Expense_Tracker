@@ -37,12 +37,6 @@ function App() {
     setExpenses([...expenses, expenseWithId]);
 };
 
-  const addExpense = (newExpense) => {
-    const newId = expenses.length + 1; // Assuming `id` should be auto-incremented
-    const expenseWithId = { ...newExpense, id: newId };
-    setExpenses([...expenses, expenseWithId]);
-};
-
   return (
     <Router>
     <div className="App">
@@ -50,10 +44,9 @@ function App() {
       <AddExpense onAddExpense={addExpense}/>
       <ExpenseFilter filterItem = {filterItem}/>
       <Routes>
-        <Route path="/" element={<ExpenseList items = {expenses} deleteItem = {deleteItem}/>}/>
+        <Route path="/" element={<ExpenseList items = {expenses} deleteItem = {deleteItem} updateExpense={updateExpense}/>}/>
         <Route path="/more-info/:id" element={<MoreInfo/>}/>
         </Routes>
-      <ExpenseList items = {expenses} deleteItem = {deleteItem} updateExpense = {updateExpense}/>
      
     </div>
     </Router>
