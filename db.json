@@ -1,0 +1,44 @@
+{
+    "info": [
+        {
+            "id": "1",
+            "details": "Bought groceries needed for this week ",
+            "dateofpayment": "24/01/2024",
+            "timepaid": "08.45A.M",
+            "modeofpayment": "Cash",
+            "nextduedate": "31/02/2024"
+        },
+        {
+            "id": "2",
+            "details": "Rent needed for this month has been paid in full",
+            "dateofpayment": "31/12/2023",
+            "timepaid": "06.40P.M",
+            "modeofpayment": "M-pesa",
+            "nextduedate": "31/01/2024"
+        },
+        {
+            "id": "3",
+            "details": "The electricity bill for the home has been paid to last for a month",
+            "date of payment": "12/01/2024",
+            "time paid": "08.00A.M",
+            "mode of payment": "M-pesa",
+            "next due date": "12/02/2024"
+        },
+        {
+            "id": "4",
+            "details": "Monthly subscription to DSTV has been changed to the Lite Package",
+            "dateofpayment": "24/01/2024",
+            "timepaid": "12.00 A.M",
+            "modeofpayment": "M-pesa",
+            "nextduedate": "24/02/2024"
+        },
+        {
+            "id": "5",
+            "details": "Went shopping due to a shortage in clothing",
+            "dateofpayment": "31/12/2023",
+            "timepaid": "10.00 A.M",
+            "modeofpayment": "Cash",
+            "nextduedate": "31/01/2024"
+        }
+    ]
+}
