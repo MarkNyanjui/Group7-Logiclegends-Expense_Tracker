@@ -3,6 +3,7 @@
     height: 60px;
     background-color: blueviolet;
     margin-bottom: 30px;
+    border: 1px solid black
 }
 .Navbar-container h1 {
     font-size: 30px;
