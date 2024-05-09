@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './AddExpense.css'
 
 const AddExpense = ({ onAddExpense }) => {
     const [description, setDescription] = useState('');
@@ -28,6 +29,7 @@ const AddExpense = ({ onAddExpense }) => {
                     onChange={(e) => setDescription(e.target.value)}
                 />
             </div>
+
             <div className="form-group">
                 <label>Amount ($)</label>
                 <input
@@ -57,3 +59,4 @@ const AddExpense = ({ onAddExpense }) => {
 };
 
 export default AddExpense;
+
