@@ -5,6 +5,8 @@ import NavBar from './Components/NavBar';
 import ExpenseFilter from './Components/ExpenseFilter';
 import { BrowserRouter as  Router, Route, Routes} from'react-router-dom';
 import MoreInfo from './Components/MoreInfo';
+import AddExpense from './Components/AddExpense'; 
+
 
 function App() {
 
@@ -15,25 +17,44 @@ function App() {
     {id:4, description:"Dstv", amount:"500", category:"Entertainment"},
     {id:5, description:"Clothes", amount:"2000", category:"Clothing"},
   ]);
+    
+   
 
   const deleteItem = (id) => {
     setExpenses (expenses.filter(expense => expense.id !== id))
   }
 
-  
+  const updateExpense = (updatedItems) => {
+  setExpenses(updatedItems);
+};
+
   const filterItem = (categ) => {
     setExpenses(expenses.filter(expense => expense.category === categ))
   }
+  const addExpense = (newExpense) => {
+    const newId = expenses.length + 1; // Assuming `id` should be auto-incremented
+    const expenseWithId = { ...newExpense, id: newId };
+    setExpenses([...expenses, expenseWithId]);
+};
+
+  const addExpense = (newExpense) => {
+    const newId = expenses.length + 1; // Assuming `id` should be auto-incremented
+    const expenseWithId = { ...newExpense, id: newId };
+    setExpenses([...expenses, expenseWithId]);
+};
 
   return (
     <Router>
     <div className="App">
       <NavBar/>
+      <AddExpense onAddExpense={addExpense}/>
       <ExpenseFilter filterItem = {filterItem}/>
       <Routes>
         <Route path="/" element={<ExpenseList items = {expenses} deleteItem = {deleteItem}/>}/>
         <Route path="/more-info/:id" element={<MoreInfo/>}/>
         </Routes>
+      <ExpenseList items = {expenses} deleteItem = {deleteItem} updateExpense = {updateExpense}/>
+     
     </div>
     </Router>
   );
