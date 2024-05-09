@@ -3,6 +3,8 @@ import { useState } from 'react';
 import ExpenseList from './Components/ExpenseList';
 import NavBar from './Components/NavBar';
 import ExpenseFilter from './Components/ExpenseFilter';
+import { BrowserRouter as  Router, Route, Routes} from'react-router-dom';
+import MoreInfo from './Components/MoreInfo';
 
 function App() {
 
@@ -24,12 +26,17 @@ function App() {
   }
 
   return (
+    <Router>
     <div className="App">
       <NavBar/>
       <ExpenseFilter filterItem = {filterItem}/>
-      <ExpenseList items = {expenses} deleteItem = {deleteItem}/>
+      <Routes>
+        <Route path="/" element={<ExpenseList items = {expenses} deleteItem = {deleteItem}/>}/>
+        <Route path="/more-info/:id" element={<MoreInfo/>}/>
+        </Routes>
     </div>
+    </Router>
   );
 }
 
-export default App;
+export default App

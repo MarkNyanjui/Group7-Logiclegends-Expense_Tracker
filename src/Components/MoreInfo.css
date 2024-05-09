@@ -1,0 +1,20 @@
+li {
+    text-align: left;
+    font-size: 20px;
+    color: green;
+    font-family: monospace;
+}
+u {
+    color: red;
+}
+h2 {
+    text-align: left;
+    font-weight: bolder;
+    font-size: 60px;
+    font-family: 'Times New Roman', Times, serif;
+    color: red;
+}
+strong {
+    color: blue;
+}
+

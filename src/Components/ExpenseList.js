@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 function ExpenseList({items, deleteItem}) {
     return (
@@ -18,6 +19,9 @@ function ExpenseList({items, deleteItem}) {
                         <td>{description}</td>
                         <td>{amount}</td>
                         <td>{category}</td>
+                        <td>
+                            <Link to= {`/more-info/${id}`}>
+                            <button className='more' >More Info</button></Link></td>
                         <td><button className="btn btn-outline-danger" onClick={() =>deleteItem(id)}>Delete</button></td>
                     </tr>
                     ))}
